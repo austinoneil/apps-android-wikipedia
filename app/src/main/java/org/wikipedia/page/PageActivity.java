@@ -890,4 +890,21 @@ public class PageActivity extends ThemedActionBarActivity implements PageFragmen
             }
         }
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(event.isCtrlPressed()) {
+            if (keyCode == KeyEvent.KEYCODE_F) {
+                pageFragment.showFindInPage();
+                return true;
+            }
+        }
+        else {
+            if(keyCode == KeyEvent.KEYCODE_F3) {
+                pageFragment.showFindInPage();
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }
